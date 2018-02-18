@@ -2,6 +2,8 @@
 
 An WebExtension to prevent merging of a pull request that contains `fixup!` commits on GitHub (also Enterprise).
 
+![](https://raw.githubusercontent.com/mozamimy/ss/master/autosquash-please.png)
+
 ## Install
 
 Now this extension is not published on extension store of Firefox and Chrome. So this extension should be added as a temporary add-on.
