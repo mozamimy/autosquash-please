@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    You can let these options to be blank if you don't want to set these values.
+    <ul>
+      <li>Github token: Required to read private repositories</li>
+      <li>Github Enterprise domain: Required to use on GitHub Enterprise.</li>
+      <li>Github Enterprise token: Required to use on GitHub Enterprise.</li>
+    </ul>
+    <form>
+      <label>
+        GitHub token:
+        <input type="text" id="github-token">
+      </label>
+      <br>
+      <label>
+        GitHub Enterprise domain:
+        <input type="text" id="ghe-domain">
+      </label>
+      <br>
+      <label>
+        GitHub Enterprise token:
+        <input type="text" id="ghe-token">
+      </label>
+      <br>
+
+      <button type="submit">Save</button>
+    </form>
+
+    <script src="options.js"></script>
+  </body>
+</html>

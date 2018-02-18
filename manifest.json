@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "autosquash-please",
+  "version": "0.1",
+  "description": "An WebExtension to prevent merging of a pull request that contains `fixup!` commits on GitHub (Enterprise).",
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["autosquash_please.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html"
+  },
+  "permissions": [
+    "https://*/*",
+    "webRequest",
+    "storage"
+  ]
+}
