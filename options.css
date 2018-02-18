@@ -1,0 +1,20 @@
+#validation-message {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: white;
+}
+
+.hide {
+  display: none;
+}
+
+.saved {
+  display: block;
+  border: thin solid green;
+}
+
+.error {
+  display: block;
+  border: thin solid red;
+}

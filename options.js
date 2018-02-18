@@ -1,3 +1,19 @@
+const showSaved = () => {
+    const validationMsgArea = document.getElementById('validation-message');
+    validationMsgArea.innerHTML = '✅ Options are saved.';
+    validationMsgArea.classList.remove('hide');
+    validationMsgArea.classList.remove('error');
+    validationMsgArea.classList.add('saved');
+};
+
+const showErrors = (errorMessage) => {
+    const validationMsgArea = document.getElementById('validation-message');
+    validationMsgArea.innerHTML = errorMessage;
+    validationMsgArea.classList.remove('hide');
+    validationMsgArea.classList.remove('saved');
+    validationMsgArea.classList.add('error');
+};
+
 const saveOptions = (e) => {
     e.preventDefault();
 
@@ -25,18 +41,17 @@ const saveOptions = (e) => {
             github_token: document.getElementById('github-token').value.trim(),
             ghe_domain: document.getElementById('ghe-domain').value.trim(),
             ghe_token: document.getElementById('ghe-token').value.trim(),
-        }).then(() => {
-            alert('Options are saved.');
-        }).catch((e) => {
+        }).then(showSaved).catch((e) => {
             alert('An error occured in saving options.');
             console.error(e);
+            showErrors('An error occured in loading options.');
         });
     } else {
-        let errorMessage = 'Validation error!\n';
+        let errorMessage = '<strong>⚠️Validation error!</strong><br>';
         validationErrors.forEach((error) => {
-            errorMessage += `${error.Key}: ${error.Message}\n`;
+            errorMessage += `${error.Key}: ${error.Message}<br>`;
         });
-        alert(errorMessage);
+        showErrors(errorMessage);
     }
 };
 
@@ -52,6 +67,7 @@ const restoreOptions = () => {
     }).catch((e) => {
         console.error('An error occured in loading options.');
         console.error(e);
+        showErrors('An error occured in loading options.');
     });
 };
 

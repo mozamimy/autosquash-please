@@ -16,6 +16,8 @@ Open `about:debugging` and click **Load Temporary Add-on** then select manifest.
 
 Open `chrome://extensions/` and click **Load unpacked extension** then select this directory.
 
+After installation, **you have to set personal access token that allows `repo` operations in add-on options view**. Also you should set GHE domain and its personal access token when you use in GitHub Enterprise. This extension does not work if you forget to set them.
+
 ## License
 
 MIT
