@@ -6,7 +6,10 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["autosquash_please.js"]
+      "js": [
+        "browser_polyfill.js",
+        "autosquash_please.js"
+      ]
     }
   ],
   "options_ui": {
