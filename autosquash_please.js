@@ -80,7 +80,8 @@ loadOptions().then((options) => {
             if (commitMessages.find(isFixupCommits)) {
                 console.log('[autosquash-please] A fixup! commit is found.');
                 let mergeDetails = document.getElementById('partial-pull-merging');
-                mergeDetails.innerHTML = '<p class="merge-pr-more-commits" style="font-weight: bold; font-size: 150%; color: red;">The autosquash-please addon prevents to push merge button.</p>';
+                let mergeButton = mergeDetails.getElementsByClassName('merge-message')[0]
+                mergeButton.innerHTML = '<p class="merge-pr-more-commits" style="font-weight: bold; font-size: 150%; color: red;">The autosquash-please addon prevents to push merge button.</p>';
 
             } else {
                 console.log('[autosquash-please] No fixup! commits.');
